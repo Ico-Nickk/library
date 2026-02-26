@@ -20,7 +20,7 @@ addBookToLibrary("tom and jerry", "mr bean", "400", "read");
 function createCard(book) {
     const newdiv = document.createElement("div");
     newdiv.className = "bookCard";
-    const newParagraph = document.createElement("p")
+    const newParagraph = document.createElement("p");
     newParagraph.textContent = `${book.title} by ${book.author} has ${book.pages} pages. has been ${book.read}`;
     newdiv.appendChild(newParagraph);
     document.body.appendChild(newdiv);
