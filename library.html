@@ -9,8 +9,8 @@
 <body>
     <button command="show-modal" commandfor="addBook">add new book</button>
     <dialog id="addBook">
-        <p>fill in the following to add new book to library</p>
-        <form action="">
+        <form id="bookForm" action="">
+            <p>fill in the following to add new book to library</p>
             <label for="title">Enter title</label>
             <input type="text" id="title" name="title">
 
@@ -25,8 +25,8 @@
                 <option value="read">Read</option>
                 <option value="not read">Not read</option>
             </select>
+            <button type="submit" id="submit">Submit</button>
         </form>
-        <button commandfor="addBook" command="close"> close</button>
     </dialog>
     <script src="library.js"></script>
 </body>

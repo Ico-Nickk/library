@@ -1,21 +1,18 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read,
+function Book(book) {
+    this.title = book.title,
+    this.author = book.author,
+    this.pages = book.pages,
+    this.read = book.read,
     this.id = crypto.randomUUID()
 }
 
-function addBookToLibrary(title, author, pages, read) {
-    let newBook = new Book(title, author, pages, read);
+function addBookToLibrary(book) {
+    let newBook = new Book(book);
     myLibrary.push(newBook);
     createCard(newBook)
 }
-
-addBookToLibrary("chicken", "fish", "24", "read");
-addBookToLibrary("tom and jerry", "mr bean", "400", "read");
 
 function createCard(book) {
     const newdiv = document.createElement("div");
@@ -27,15 +24,15 @@ function createCard(book) {
 }
 
 function closeMe() {
-    document.getElementById("bookForm").style.display = "none";
+    document.getElementById("addBook").close();
 }
 
 document.getElementById("bookForm").addEventListener('submit', function(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formObject = Object.fromEntries(formData.entries())
+    addBookToLibrary(formObject);
     alert("Book added to your library, thanks!");
-    
     closeMe();
 })
 
