@@ -20,6 +20,10 @@ function createCard(book) {
     const newParagraph = document.createElement("p");
     newParagraph.textContent = `${book.title} by ${book.author} has ${book.pages} pages. has been ${book.read}`;
     newdiv.appendChild(newParagraph);
+    const removeBttn = document.createElement("button");
+    removeBttn.textContent = "remove book"
+    removeBttn.className = "removeBttn"
+    newdiv.appendChild(removeBttn);
     document.body.appendChild(newdiv);
 }
 
