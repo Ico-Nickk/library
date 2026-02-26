@@ -11,13 +11,11 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    console.log(myLibrary);
+    createCard(newBook)
 }
 
 addBookToLibrary("chicken", "fish", "24", "read");
 addBookToLibrary("tom and jerry", "mr bean", "400", "read");
-
-const mobbieDick = new Book("mobbie dick", "author", "300", "read")
 
 function createCard(book) {
     const newdiv = document.createElement("div");
@@ -28,11 +26,4 @@ function createCard(book) {
     document.body.appendChild(newdiv);
 }
 
-function displayBooks() {
-    for(book in myLibrary) {
-        createCard(book);
-    };
-}
-
-displayBooks()
 
