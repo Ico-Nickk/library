@@ -72,6 +72,8 @@ h6 {
 .bookCard {
     background-color: black;
     width: 300px;
-    height: 300px;
+    height: 100px;
     border-radius: 30px;
+    color: azure;
+    padding: 30px;
 }
