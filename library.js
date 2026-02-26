@@ -26,4 +26,17 @@ function createCard(book) {
     document.body.appendChild(newdiv);
 }
 
+function closeMe() {
+    document.getElementById("bookForm").style.display = "none";
+}
+
+document.getElementById("bookForm").addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const formObject = Object.fromEntries(formData.entries())
+    alert("Book added to your library, thanks!");
+    
+    closeMe();
+})
+
 
