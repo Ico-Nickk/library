@@ -13,9 +13,9 @@ function addBookToLibrary(book) {
     myLibrary.push(newBook);
     createCard(newBook)
 }
+const cardDisplay = document.querySelector(".cardDisplay");
 
 function createCard(book) {
-    const cardDisplay = document.querySelector(".cardDisplay");
     const newdiv = document.createElement("div");
     newdiv.className = "bookCard";
     newdiv.dataset.bookId = book.id;
@@ -41,6 +41,21 @@ document.getElementById("bookForm").addEventListener('submit', function(event) {
     alert("Book added to your library, thanks!");
     closeMe();
 });
+
+cardDisplay.addEventListener('click', (event) => {
+    if(event.target.className === "removeBttn") {
+        const clickedDiv = event.target.parentNode;
+        const idOfBookToRemove = clickedDiv.dataset.bookId;
+        const indexOfBook = myLibrary.findIndex(item => item.id === idOfBookToRemove);
+        if (indexOfBook > -1) {
+            myLibrary.splice(indexOfBook, 1);
+        };
+        alert(`book of id ${idOfBookToRemove} has been removed`);
+        clickedDiv.remove();
+    };
+});
+
+
 
 
 
