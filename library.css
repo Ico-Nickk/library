@@ -22,7 +22,6 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    padding: 10px;
 }
 
 img,
@@ -76,5 +75,13 @@ h6 {
     border-radius: 30px;
     color: azure;
     padding: 30px;
+    margin: 30px;
+}
+
+.removeBttn {
+    margin-top: 20px;
+}
+
+.cardDisplay {
     margin: 30px;
 }
