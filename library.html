@@ -7,27 +7,30 @@
     <link rel="stylesheet" href="library.css">
 </head>
 <body>
-    <button command="show-modal" commandfor="addBook">add new book</button>
-    <dialog id="addBook">
-        <form id="bookForm" action="">
-            <p>fill in the following to add new book to library</p>
-            <label for="title">Enter title</label>
-            <input type="text" id="title" name="title">
+    <div class="cardDisplay">
 
-            <label for="author">Enter authors name</label>
-            <input type="text" id="author" name="author">
-
-            <label for="pages">Enter number of pages</label>
-            <input type="text" id="pages" name="pages">
-
-            <label for="read">have you read this book?</label>
-            <select name="read" id="read">
-                <option value="read">Read</option>
-                <option value="not read">Not read</option>
-            </select>
-            <button type="submit" id="submit">Submit</button>
-        </form>
-    </dialog>
+        <button command="show-modal" commandfor="addBook">add new book</button>
+        <dialog id="addBook">
+            <form id="bookForm" action="">
+                <p>fill in the following to add new book to library</p>
+                <label for="title">Enter title</label>
+                <input type="text" id="title" name="title">
+    
+                <label for="author">Enter authors name</label>
+                <input type="text" id="author" name="author">
+    
+                <label for="pages">Enter number of pages</label>
+                <input type="text" id="pages" name="pages">
+    
+                <label for="read">have you read this book?</label>
+                <select name="read" id="read">
+                    <option value="read">Read</option>
+                    <option value="not read">Not read</option>
+                </select>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </dialog>
+    </div>
     <script src="library.js"></script>
 </body>
 </html>
