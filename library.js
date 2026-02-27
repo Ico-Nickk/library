@@ -15,8 +15,10 @@ function addBookToLibrary(book) {
 }
 
 function createCard(book) {
+    const cardDisplay = document.querySelector(".cardDisplay");
     const newdiv = document.createElement("div");
     newdiv.className = "bookCard";
+    newdiv.dataset.bookId = book.id;
     const newParagraph = document.createElement("p");
     newParagraph.textContent = `${book.title} by ${book.author} has ${book.pages} pages. has been ${book.read}`;
     newdiv.appendChild(newParagraph);
@@ -24,7 +26,7 @@ function createCard(book) {
     removeBttn.textContent = "remove book"
     removeBttn.className = "removeBttn"
     newdiv.appendChild(removeBttn);
-    document.body.appendChild(newdiv);
+    cardDisplay.appendChild(newdiv);
 }
 
 function closeMe() {
@@ -38,6 +40,7 @@ document.getElementById("bookForm").addEventListener('submit', function(event) {
     addBookToLibrary(formObject);
     alert("Book added to your library, thanks!");
     closeMe();
-})
+});
+
 
 
